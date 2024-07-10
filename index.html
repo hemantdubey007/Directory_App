@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory App </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tabs">
+        <button class="tablink" onclick="openTab(event, 'AddPerson')">Add New Person</button>
+        <button class="tablink" onclick="openTab(event, 'RetrieveInfo')">Retrieve Information</button>
+    </div>
+
+    <div id="AddPerson" class="tabcontent">
+        <h3>Add New Person</h3>
+        <table id="personTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Aadhar Number</th>
+                    <th>Mobile Number</th>
+                    <th>Age</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button id="btn" onclick="addRow()">Add New Person</button>
+    </div>
+
+    <div id="RetrieveInfo" class="tabcontent">
+        <h3>Retrieve Information</h3>
+        <form onsubmit="retrieveInfo(event)">
+            <label for="searchAadhar">Aadhar Number:</label>
+            <input type="text" id="searchAadhar" required>
+            <button type="submit">Retrieve</button>
+        </form>
+        <div id="retrieveResult"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
